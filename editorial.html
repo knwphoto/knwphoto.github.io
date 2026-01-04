@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Editorial Portfolio | KNW PHOTO</title>
+    <meta name="description" content="Editorial photography portfolio by KNW PHOTO. Based in Surrey & London, England.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- lightGallery CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.8.3/css/lightgallery.min.css">
+
+    <style>
+        .lg-backdrop { background-color: #fff !important; }
+        .lg-close { color: #000 !important; font-size: 28px; top: 20px !important; right: 20px !important; }
+        .lg-next, .lg-prev {
+            color: #000 !important;
+            font-size: 36px;
+            width: 60px;
+            height: 60px;
+            top: 50% !important;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+        }
+        .lg-next:hover, .lg-prev:hover { background: rgba(255,255,255,0.4); }
+
+        .editorial-flow img {
+            width: auto;
+            max-width: 550px;
+            max-height: 850px;
+            display: block;
+            margin: 0 auto 60px auto;
+            cursor: pointer;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        .editorial-flow img:hover { transform: scale(1.03); opacity: 0.9; }
+
+        .image-pair {
+            max-width: 550px;
+            margin: 0 auto 60px auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .image-pair img {
+            width: 100%;
+            height: auto;
+            cursor: pointer;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        .image-pair img:hover { transform: scale(1.03); opacity: 0.9; }
+
+        @media (max-width: 768px) {
+            .editorial-flow img { max-width: 90%; max-height: 80vh; }
+            .image-pair { grid-template-columns: 1fr; gap: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="site-header">
+    <nav class="nav">
+        <a href="index.html" class="site-logo" aria-label="Home">
+            <img src="assets/images/logo.png" alt="KNW PHOTO">
+        </a>
+
+        <div class="hamburger">&#9776;</div>
+
+        <ul class="nav-links">
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="rates.html">Rates</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li class="instagram-li">
+                <a href="https://www.instagram.com/knw.photo/" target="_blank" aria-label="Instagram">
+                    <img src="assets/icons/instagram.png" alt="Instagram" class="instagram-icon">
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<main class="site-container">
+
+    <header class="page-header">
+        <h1>Editorial Portfolio</h1>
+        <p>Editorial and fashion photography. Click any image to enlarge.</p>
+    </header>
+
+    <section id="editorial-gallery" class="editorial-flow">
+
+        <a href="assets/images/portfolio/editorial/01.jpg" class="gallery-item">
+            <img src="assets/images/portfolio/editorial/01.jpg" alt="Editorial photography">
+        </a>
+
+        <a href="assets/images/portfolio/editorial/02.jpg" class="gallery-item">
+            <img src="assets/images/portfolio/editorial/02.jpg" alt="Editorial photography">
+        </a>
+
+        <div class="image-pair">
+            <a href="assets/images/portfolio/editorial/03.jpg" class="gallery-item">
+                <img src="assets/images/portfolio/editorial/03.jpg" alt="Editorial photography">
+            </a>
+            <a href="assets/images/portfolio/editorial/04.jpg" class="gallery-item">
+                <img src="assets/images/portfolio/editorial/04.jpg" alt="Editorial photography">
+            </a>
+        </div>
+
+        <a href="assets/images/portfolio/editorial/05.jpg" class="gallery-item">
+            <img src="assets/images/portfolio/editorial/05.jpg" alt="Editorial photography">
+        </a>
+
+    </section>
+
+</main>
+
+<footer class="site-footer">
+    © 2026 KNW PHOTO — Surrey & London, England
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@2.8.3/lightgallery.umd.min.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    lightGallery(document.getElementById('editorial-gallery'), {
+        selector: '.gallery-item',
+        mode: 'lg-slide',
+        speed: 500,
+        backdropColor: '#fff',
+        closable: true,
+        download: false,
+        fullScreen: false,
+        zoom: false,
+        counter: true,
+        hideBarsDelay: 3000
+    });
+
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+});
+</script>
+
+</body>
+</html>
