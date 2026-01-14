@@ -1,4 +1,7 @@
 /* ===================== RESET ===================== */
+html {
+    overflow-y: scroll; /* prevent horizontal shift */
+}
 * {
     margin: 0;
     padding: 0;
@@ -533,3 +536,4 @@ header nav ul li a svg {
         padding: 0 15px;
     }
 }
+
