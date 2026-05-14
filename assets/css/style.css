@@ -542,8 +542,9 @@ header nav ul li a svg {
 ============================== */
 
 .site-container {
-    max-width: 100%;
-    padding: 60px 56px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
 }
 
 .page-header {
@@ -566,8 +567,7 @@ header nav ul li a svg {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 14px;
     width: 100%;
-    max-width: 1450px;
-    margin: 0 auto;
+    margin-top: 40px;
 }
 
 /* Tile */
@@ -595,8 +595,13 @@ header nav ul li a svg {
     filter: brightness(1.05);
 }
 
+/* Stop old portfolio hover overlay interfering */
+.portfolio-two-grid .large-tile::after {
+    display: none;
+}
+
 /* Overlay */
-.portfolio-overlay {
+.portfolio-two-grid .portfolio-overlay {
     position: absolute;
     inset: 0;
     display: flex;
@@ -604,6 +609,7 @@ header nav ul li a svg {
     padding: 36px;
     color: #fff;
     pointer-events: none;
+    z-index: 2;
 
     background: linear-gradient(
         to top,
@@ -614,11 +620,11 @@ header nav ul li a svg {
 }
 
 /* Text */
-.portfolio-text {
+.portfolio-two-grid .portfolio-text {
     color: #fff;
 }
 
-.portfolio-title {
+.portfolio-two-grid .portfolio-title {
     margin: 0 0 18px 0;
     font-size: 3rem;
     line-height: 1;
@@ -627,44 +633,40 @@ header nav ul li a svg {
     text-transform: uppercase;
 }
 
-.portfolio-link-wrap {
+.portfolio-two-grid .portfolio-link-wrap {
     display: flex;
     align-items: center;
     gap: 22px;
 }
 
-.portfolio-link-text {
+.portfolio-two-grid .portfolio-link-text {
     font-size: 0.9rem;
     font-weight: 600;
     letter-spacing: 0.08em;
     text-transform: uppercase;
 }
 
-.portfolio-arrow {
+.portfolio-two-grid .portfolio-arrow {
     font-size: 2rem;
     line-height: 1;
     transition: transform 0.4s ease;
 }
 
-.large-tile:hover .portfolio-arrow {
+.portfolio-two-grid .large-tile:hover .portfolio-arrow {
     transform: translateX(8px);
 }
 
 /* Mobile */
 @media (max-width: 900px) {
-    .site-container {
-        padding: 40px 24px;
-    }
-
     .portfolio-two-grid {
         grid-template-columns: 1fr;
     }
 
-    .portfolio-title {
+    .portfolio-two-grid .portfolio-title {
         font-size: 2.2rem;
     }
 
-    .portfolio-overlay {
+    .portfolio-two-grid .portfolio-overlay {
         padding: 24px;
     }
 }
